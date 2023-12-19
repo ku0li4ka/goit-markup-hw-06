@@ -170,7 +170,7 @@ address {
 }
 
 .features-item-subtitle {
-  text-align: center;
+  text-align: left;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
@@ -306,7 +306,7 @@ address {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .portfolio-item-text {
@@ -328,7 +328,7 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  /* gap: 72px; */
 }
 
 .footer-logo-link {
@@ -367,6 +367,7 @@ address {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 72px;
 }
 
 .footer-social-list {
@@ -399,6 +400,10 @@ address {
 
 .footer-social-icon {
   fill: #f4f4fd;
+}
+
+.subscribe-wraper {
+  margin-top: 72px;
 }
 
 .subscribe-wraper-form-title {
@@ -507,6 +512,34 @@ address {
 
 /* <768 */
 
+@media screen and (min-width: 768px) {
+  .current {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .header-menu-link:hover,
+  .header-menu-link:focus,
+  .header-menu-link:active {
+    color: #404bbf;
+  }
+
+  .header-menu-item {
+    display: block;
+    position: relative;
+  }
+
+  .current::after {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    width: 48px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    content: "";
+  }
+}
 @media screen and (max-width: 767px) {
   .header {
     padding-top: 18px;
@@ -532,6 +565,10 @@ address {
   letter-spacing: 0.02em;
 }
 
+.subscribe-wraper {
+  margin-top: 0;
+}
+
 .mobile-menu-open-btn {
   background-color: transparent;
   border: none;
@@ -541,7 +578,7 @@ address {
 }
 
 .mobile-menu-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99999999;
@@ -591,14 +628,8 @@ address {
   padding: 72px 24px 24px 16px;
 }
 
-.mobile-menu-navigation {
-  margin-bottom: 168px;
-}
-
-.mobile-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
 }
 
 .mobile-menu-link {
@@ -614,6 +645,7 @@ address {
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
+  margin-top: auto;
 }
 
 .mobile-menu-social-list {
@@ -892,11 +924,13 @@ address {
 @media screen and (min-resolution: 192dpi) and (max-width: 767px),
   screen and (min-resolution: 2dppx) and (max-width: 767px),
   screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/hero-mobile@2x.jpg);
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-mobile@2x.jpg);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -946,6 +980,10 @@ address {
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .header-contacts-link {
+    font-size: 12px;
   }
 
   .hero {
@@ -1014,17 +1052,23 @@ address {
     width: 356px;
     height: 300px;
   }
+
+  .footer {
+    text-align: left;
+  }
   .footer-wrap {
     max-width: 584px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: first baseline;
-    gap: 72px 24px;
+    /* gap: 72px 24px; */
   }
 
   .footer-social-wrap {
     display: block;
+    margin-bottom: 72px;
+    margin-left: 24px;
   }
 
   .footer-text {
@@ -1047,11 +1091,13 @@ address {
 @media screen and (min-resolution: 192dpi) and (min-width: 768px),
   screen and (min-resolution: 2dppx) and (min-width: 768px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
-  .background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(/images/hero-tablet@2x.jpg);
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-tablet@2x.jpg);
+  }
 }
 
 /* ============== TABLET STYLES ============== */
@@ -1065,6 +1111,10 @@ address {
     max-width: 1128px;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .header-contacts-link {
+    font-size: 16px;
   }
 
   .hero {
@@ -1230,6 +1280,18 @@ address {
 
   .footer-social-subtitle {
     text-align: left;
+  }
+
+  .footer-social-wrap {
+    display: block;
+    margin-bottom: 72px;
+    margin-left: 120px;
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
+
+  .footer-wrap {
+    flex-wrap: nowrap;
   }
 
   .subscribe-wraper-form-title {
